@@ -10,10 +10,52 @@
 
     //ENTRADA
 
+    const numUm = Number(prompt(`Informe um número:`).replace(",","."));
+    const numDois = Number(prompt(`Informe um segundo número:`).replace(",","."));
+    const operacao = prompt(`Informe a operação que deseja realizar = +, -, *, /`);
 
     //PROCESSAMENTO
 
+    let resultado;
+    let parImpar;
+    let positivoNegativo;
+    let inteiroDecimal;
+
+    switch(operacao){
+        case "+":
+            resultado = numUm + numDois;
+            break;
+        case "-":
+            resultado =  numUm - numDois;
+            break;
+        case "*":
+            resultado = numUm * numDois;
+            break;
+        case "/":
+            resultado = numUm / numDois;
+            break;
+        default:
+            alert("Operação inválida");
+    }
+    if (resultado % 2 == 0){
+        parImpar = "Par";
+    } else {
+        parImpar = "Impar";
+    }
+
+    if (resultado > 0){
+        positivoNegativo = "Positivo";
+    } else{
+        positivoNegativo = "Negativo";
+    }
+    if (resultado % 1 == 0) {
+        inteiroDecimal = "Inteiro";
+    } else {
+        inteiroDecimal = "Decimal";
+    }
     
     //SAÍDA
+
+    document.write(`O resultado da operação é: ${resultado}, esse número é ${parImpar}, também ${positivoNegativo}, e ${inteiroDecimal}.`);
 
 </script>

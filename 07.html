@@ -8,15 +8,63 @@
 
     //ENTRADA
 
-    const hemisferio = prompt("Em qual hemisfério você está? Norte ou Sul.");
+    const hemisferio = prompt("Em qual hemisfério você está? Norte ou Sul");
     const mes = prompt("Qual o mês atual?");
     
     //PROCESSAMENTO
 
-    switch(hemisferio){
-        
+    let estacao ;
+
+    if (hemisferio == "Norte"){
+        switch(mes){
+            case "Dezembro":
+            case "Janeiro":
+            case "Fevereiro":
+            case "Março":
+                estacao = "Inverno";
+                break;
+            case "Abril":
+            case "Maio":
+            case "Junho":
+                estacao = "Primavera";
+                break;
+            case "Julho":
+            case "Agosto":
+            case "Setembro":
+                estacao = "Verão";
+                break;
+            default:
+                estacao = "Outono"
+                break;
+        }      
+    } else if (hemisferio == "Sul"){
+        switch(mes){
+            case "Dezembro":
+            case "Janeiro":
+            case "Fevereiro":
+            case "Março":
+                estacao = "Verão";
+                break;
+            case "Abril":
+            case "Maio":
+            case "Junho":
+                estacao = "Outono";
+                break;
+            case "Julho":
+            case "Agosto":
+            case "Setembro":
+                estacao = "Inverno";
+                break;
+            default:
+                estacao = "Primavera"
+                break;
+        }      
+    } else {
+        alert("Insira um hemisferio válidio.")
     }
 
     //SAÍDA
+
+    document.write(`No hemisfério ${hemisferio} é ${estacao}.`);
 
 </script>
